@@ -9,7 +9,6 @@ respond immediately with a single line response.
 
 */
 
-var wordfilter = require('wordfilter');
 const xray = require('x-ray');
 var x = new xray();
 var Promise = require("promise");
@@ -20,15 +19,28 @@ module.exports = function(controller) {
       
       results.then(function(data){
         var attachments = [];
+        var fields = [];
         for (var i in data){
-            attachments.push({
-            text: data[i].date + " - <" +  data[i].link + "|" + data[i].subject + " " +  data[i].chapter +">",          
-            color: '#3879cc'
+            fields.push({
+            title: data[i].title,  
+            value: data[i].date + " - <" +  data[i].link + "|" + data[i].subject + " " +  data[i].chapter +">",          
+            short:false
           });
         }
+        
+        var attachment ={
+          fields:fields,
+          'text': 'Here is what I found for you',
+           'color': '#3879cc',
+          "footer": "MangaStream API",
+          "footer_icon": "http://mangastream.com/favicon.ico"
+          
+        }
+        attachments.push(attachment);
         var reply_with_attachments = {
-        'text': 'Here is what I found',
-        'attachments': attachments
+          
+          'attachments': attachments,
+           
         }
      
          bot.reply (message, reply_with_attachments);
