@@ -1,4 +1,10 @@
-# Botkit Starter Kit for Slack Bots
+# MangaStream Bot
+Playing around with [Botkit](https://botkit.ai) to create a bot to go out to [MangaStream](https://mangastream.com) and pull in the latest mangas listed on the homepage. 
+Using [Node.JS](https://nodejs.org/en/) and [x-ray](https://www.npmjs.com/package/x-ray). Want to give credit to [pmcalabrese](https://github.com/pmcalabrese/amazon-scraper) for his source code to assist we using Promises.
+
+
+# Past information from BotKit
+## Botkit Starter Kit for Slack Bots
 
 This repo contains everything you need to get started building a Slack bot with [Botkit](https://botkit.ai) and [Botkit Studio](https://botkit.ai).
 
